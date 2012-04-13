@@ -47,6 +47,7 @@ card11 = {:id => 11, :name => "Hand Destruction", :type => "spell", :desc => "Bo
 
 #end
 card13 = {:id => 13, :name => "Fortune Lady Water", :type => "monster",:desc => "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", :atk => 0, :def => 0, :level => 4, :file => "Images/FortuneLadyWater.jpg", :effect => "
+
 RoutineController.addroutine('standbyphase-start',
 '
 
@@ -61,8 +62,9 @@ atkdefmodify = $monsterfield1.findcard(13)
 atkdefmodify[2][:atk] = atkdefmodify[2][:level] * 300
 atkdefmodify[2][:def] = atkdefmodify[2][:level] * 300
 '
-
 )
+
+
 "}
 #Fortune Lady Water STATUS: semi-working INFO: Mostly working, level and atk+def modifiers are working, other effect isn't yet
 

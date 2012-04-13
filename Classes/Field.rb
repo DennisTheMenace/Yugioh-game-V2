@@ -57,10 +57,11 @@ class FieldController
       if space[0] == para1
         if space[1] == para2
           #if space[2] == para3
-            returndata.push(space)
+            returndata.push(space[2])
           #end      
         end
       end
     }
+      return returndata
   end
 end

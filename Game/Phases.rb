@@ -63,9 +63,9 @@ def activephase(currentplayer)
      playerset($testing)
      puts "End phase"
      routinecheck('endphase-start')
-     if @@hand.size > 6
-       discard('all')
-     end
+      #if @@hand.size > 6
+      # discard('all')
+      #end
      puts "End turn?"
      
      response = gets.chomp
@@ -73,8 +73,9 @@ def activephase(currentplayer)
      sleep 1
      $file.puts("#{$usr1} Ended turn #{$turncount}")
      puts "Ended turn"
-  end    
-  if $deck1.size == 0					# If your deck becomes 0 at the end of your turn you lose.
+  end
+    
+  if $player1deck.allcards.size == 0					# If your deck becomes 0 at the end of your turn you lose.
     $lp = 0
     puts "You ran out of cards to draw"
     puts "Game over!"

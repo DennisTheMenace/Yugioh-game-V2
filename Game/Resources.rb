@@ -20,7 +20,7 @@ require '../Functions/Commands.rb'
 require '../Functions/Spell.rb'		# Activate a spell card method
 require '../Extra/Colourtext.rb'	# Provides the ability to used coloured text STATUS: not working INFO: need to implement an option for when to enable colour text depending on if you have ansi colour bla bla installed
 
-#require 'Help.rb' 		# More help coming soon...
+require '../Functions/Help.rb' 		# More help coming soon...
 
 
 
@@ -29,8 +29,8 @@ require '../Functions/Summon.rb'		# Summon a monster method
 
 
 
-#require 'Trap.rb'		# Set a trap method
-#require 'List.rb'		# Handy command which lists all of a certain area(variable)
+require '../Functions/Trap.rb'		# Set a trap method
+
 #require 'Battle.rb'		# Battle a monster method
 
 #require 'Load.rb'		# Method for loading a savegame/scenario

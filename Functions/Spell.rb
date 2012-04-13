@@ -13,7 +13,7 @@ def spell
       
     spellcard = $player1hand.selectcard('spell')
     print "You have "
-    cprint ("activated ", "green")
+    cprint("activated ","green")
     puts spellcard[:name]
     $spelltrapfield1.addcard(4,spellcard)	# Adds the spell to the spell field.
     puts "Spell Field:"

@@ -20,7 +20,7 @@ def command(player,user_response)
       $monsterfield1.list
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
-      list(@@graveyard)
+      $player1graveyard.list
     elsif response == "lp"		# Display your current lifepoints
       playerset($testing)
       puts "You have #{$lp1.lifepoints}"
