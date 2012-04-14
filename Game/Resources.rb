@@ -31,7 +31,7 @@ require '../Functions/Summon.rb'		# Summon a monster method
 
 require '../Functions/Trap.rb'		# Set a trap method
 
-#require 'Battle.rb'		# Battle a monster method
+require '../Functions/Battle.rb'		# Battle a monster method
 
 #require 'Load.rb'		# Method for loading a savegame/scenario
 

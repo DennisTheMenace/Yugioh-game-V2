@@ -11,13 +11,13 @@
 def summon
     playerset('unknown')
     
-    summoncard = $player1hand.selectcard("monster")
+    summoncard = @@hand.selectcard("monster")
     if summoncard[:level] <= 4
-        $monsterfield1.addcard(0,summoncard)
+        @@monsterfield.addcard(0,summoncard)
         eval(summoncard[:effect])
-        $player1hand.removecard(summoncard)
+        @@hand.removecard(summoncard)
         puts "Monsterfield:"
-        $monsterfield1.list
+        @@monsterfield.list
     elsif summoncard[:level] > 4
         puts "Tributes coming soon..."
     

@@ -16,8 +16,9 @@ def command(player,user_response)
     elsif response == "spl"
       spell		
     elsif response == "mf"
-      puts 'Monster field:'
-      $monsterfield1.list
+        puts 'Monster field:'
+        playerset('')
+        @@monsterfield.list
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
       $player1graveyard.list

@@ -73,10 +73,19 @@ class FieldController
         if space[2][:name] == name
             eval(update)
             
-            
         end
-        
-        
         }
+    end
+    def selectcard
+        selected = []
+        @allspaces.each{|card| 
+                puts card[2][:name]
+                selected.push(card[2])
+        } 
+        
+        
+        response = gets.to_i
+        response -= 1
+        return selected[response]
     end
 end

@@ -4,6 +4,8 @@
 
 # Help command
 
+# Needs to be done from scratch...
+
 def help
   helpcmd = "
 *Commands:

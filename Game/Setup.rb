@@ -8,7 +8,7 @@ def setup
     
     $testing = 1		# Sets it to testing mode if 1 or not testing mode if 0
     $graphics = 0		# Sets if graphics are enabled if 1 or disabled if 0
-    $playermode = 0	# Sets the game to 1 player if 0 or 2 player if 1 
+    $playermode = 1	# Sets the game to 1 player if 0 or 2 player if 1 
         # 2 player mode is so buggy... In other words, don't play the game in 2 player mode
         # I'll hopefully address this in version 1.4
 
@@ -44,8 +44,14 @@ def setup
     $player1graveyard = AreaController.new
     $player1hand = AreaController.new
     $player1deck = AreaController.new
-    
+    $monsterfield2 = FieldController.new		# Creates the class instance for player 1's monster and spell/trap fields
+    $spelltrapfield2 = FieldController.new
+    $player2graveyard = AreaController.new
+    $player2hand = AreaController.new
+    $player2deck = AreaController.new
     $deck1.each{|card| $player1deck.addcard(card)}
+    $deck1.each{|card| $player2deck.addcard(card)}
+
     if $playermode == 1				# Creates the class instance for player 2's monster and spell/trap fields if 2 player is enabled
         $monsterfield2 = FieldController.new
         $spelltrapfield2 = FieldController.new
