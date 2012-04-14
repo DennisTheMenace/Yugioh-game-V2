@@ -24,8 +24,7 @@ card5 = {:id => 5, :name => "Lightning Vortex", :type => "spell", :desc => "Disc
 #Lightning Vortex STATUS: working
 card6 = {:id => 6, :name => "Giant Soldier of Stone", :type => "monster",:desc => "A giant warrior made of stone. A punch from this creature has earth-shaking results.", :atk => 1300, :def => 2000, :level => 3, :file => "Images/GiantSoldierofStone.jpg"}
 #Giant Soldier of Stone STATUS: working
-card7 = {:id => 7, :name => "Monster Reborn", :type => "spell",:desc => "Special Summon 1 monster from either player's Graveyard to your side of the field.", :effect => "playerset($testing)
-summon(@@graveyard)", :file => "Images/MonsterReborn.jpg"}
+card7 = {:id => 7, :name => "Monster Reborn", :type => "spell",:desc => "Special Summon 1 monster from either player's Graveyard to your side of the field.", :effect => "", :file => "Images/MonsterReborn.jpg"}
 #Monster Reborn  STATUS: untested
 card8 = {:id => 8, :name => "Obnoxious Celtic Guard", :type => "monster",:desc => "This card cannot be destroyed by battle with a monster that has 1900 or more ATK.", :effect => "" ,:atk => 1400, :def => 1200, :level => 4, :file => "Images/ObnoxiousCelticGuardian.jpg"}
 #Obnoxious Celtic Guardian STATUS: working
@@ -36,36 +35,17 @@ card10 = {:id => 10, :name => "Dark Magician", :type => "monster",:desc => "The 
 card11 = {:id => 11, :name => "Hand Destruction", :type => "spell", :desc => "Both players discard 2 cards to the graveyard then draw 2 cards.", :effect => 
 "2.times do discard('all') end
 2.times do draw($activeplayer,'yes', false) end", :file => "Images/HandDestruction.png"}
-#Hand Destruction STATUS: working
 
-#if $testing == 1	# Defines a different version of the card depending on the version of the game
-  card12 = {:id => 12, :name => "Compulsory Evacuation Device", :type => "trap", :desc => "Return 1 monster on the field to it's owner's hand.", :effect => 'puts "Not implemented yet"'}
-#Compulsory Evacuation Device STATUS: not working INFO: Trap cards haven't been implemented yet
-#else
-#  card12 = {:id => 12, :name => "Compulsory Evacuation Device", :type => "spell", :desc => "Return 1 monster on the field to it's owner's hand.", :effect => 'selectchoice = select(@@monsterfield) move(@@monsterfield,@@monsterfield[selectchoice],@@hand)'}
-#Compulsory Evacuation Device STATUS: untested INFO: Changed to spell type for testing purposes
-
-#end
-card13 = {:id => 13, :name => "Fortune Lady Water", :type => "monster",:desc => "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", :atk => 0, :def => 0, :level => 4, :file => "Images/FortuneLadyWater.jpg", :effect => "
-
-RoutineController.addroutine('standbyphase-start',
-'
-
-changecard = $monsterfield1.findcard(13)
-changecard[2][:level] += 1
-
-'
-)
-RoutineController.addroutine('all',
-'
-atkdefmodify = $monsterfield1.findcard(13)
-atkdefmodify[2][:atk] = atkdefmodify[2][:level] * 300
-atkdefmodify[2][:def] = atkdefmodify[2][:level] * 300
-'
-)
-
-
-"}
+card12 = {:id => 12, :name => "Compulsory Evacuation Device", :type => "trap", :desc => "Return 1 monster on the field to it's owner's hand.", :effect => 'puts "Not implemented yet"'}
+    
+$fevent1 = "standbyphase-start"
+$faction1 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:level] += 1')"
+$fevent2 = "all"
+$faction2 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:atk] = space[2][:level] * 300')"
+card13 = {:id => 13, :name => "Fortune Lady Water", :type => "monster",:desc => "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", :atk => 0, :def => 0, :level => 4, :file => "Images/FortuneLadyWater.jpg", :effect => "RoutineController.addroutine($fevent1, $faction1)
+    
+    RoutineController.addroutine($fevent2,$faction2)"
+}
 #Fortune Lady Water STATUS: semi-working INFO: Mostly working, level and atk+def modifiers are working, other effect isn't yet
 
 card14 = {:id => 14, :name => "Sakuretsu Armor", :type => "trap", :desc => "Activate only when your opponent declares an attack . Destroy the attacking monster .", :effect => 'puts "Not implemented yet"'}

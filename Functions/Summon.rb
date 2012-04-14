@@ -14,6 +14,7 @@ def summon
     summoncard = $player1hand.selectcard("monster")
     if summoncard[:level] <= 4
         $monsterfield1.addcard(0,summoncard)
+        eval(summoncard[:effect])
         $player1hand.removecard(summoncard)
         puts "Monsterfield:"
         $monsterfield1.list

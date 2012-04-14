@@ -12,7 +12,7 @@ class RoutineController				# Creates the class
     if routine[0] == 'all'
       eval routine[1] 
     elsif routine[0] == event
-      puts routine[1]
+    #puts routine[1]
       eval routine[1]
     end
     }

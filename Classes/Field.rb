@@ -56,12 +56,27 @@ class FieldController
     @allspaces.each {|space|
       if space[0] == para1
         if space[1] == para2
-          #if space[2] == para3
-            returndata.push(space[2])
-          #end      
+            if para3 != false
+                if space[2][:name] == para3
+                    returndata.push(space)
+                end
+            else
+                returndata.push(space[2])
+            end      
         end
       end
     }
       return returndata
   end
+    def updatespace(name,update)
+        @allspaces.each {|space|
+        if space[2][:name] == name
+            eval(update)
+            
+            
+        end
+        
+        
+        }
+    end
 end
