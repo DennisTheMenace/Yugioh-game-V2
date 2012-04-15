@@ -1,0 +1,10 @@
+../Resources/Images/GiantSoldierofStone.jpg
+../Resources/Images/ObnoxiousCelticGuardian.jpg
+../Resources/Images/FortuneLadyWater.jpg
+0
+0
+0
+0
+0
+0
+0

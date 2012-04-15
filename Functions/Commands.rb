@@ -81,8 +81,22 @@ def command(player,user_response)
       eval(abc)
     
     elsif response == "test" and $testing == 1
-      puts "Used for testing anything at all"
-      test 
+        puts "Used for testing anything at all"
+        playerset('')
+        $ginterface = File.new("cards.txt", "w+")
+        $ginterface.puts($monsterfield1.space1[2][:file])
+        $ginterface.puts($monsterfield1.space2[2][:file])
+        $ginterface.puts($monsterfield1.space3[2][:file])
+        $ginterface.puts($monsterfield1.space4[2][:file])
+        $ginterface.puts($monsterfield1.space5[2][:file])
+        $ginterface.puts($spelltrapfield1.space1[2][:file])
+        $ginterface.puts($spelltrapfield1.space2[2][:file])
+        $ginterface.puts($spelltrapfield1.space3[2][:file])
+        $ginterface.puts($spelltrapfield1.space4[2][:file])
+        $ginterface.puts($spelltrapfield1.space5[2][:file])
+        $ginterface.close
+       
+        
     elsif response == "options" 
       puts "This function is in development"
     elsif response == "decklist" # Outputs a list of names of all your cards in your deck

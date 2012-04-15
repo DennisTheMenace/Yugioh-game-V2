@@ -18,8 +18,9 @@ def initialise(loadfile)
  
     # Initialise graphics if graphics mode is on
     if $graphics == 1
-        require 'RMagick'
-        require 'TestGraphicsHandler.rb'
+        #require 'RMagick'
+        require '../Graphics/GraphicsHandler.rb'
+        #graphicsinit
     end
     # Load game
     if $loadgame == true

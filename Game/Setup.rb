@@ -7,7 +7,7 @@
 def setup
     
     $testing = 1		# Sets it to testing mode if 1 or not testing mode if 0
-    $graphics = 0		# Sets if graphics are enabled if 1 or disabled if 0
+    $graphics = 1 		# Sets if graphics are enabled if 1 or disabled if 0
     $playermode = 1	# Sets the game to 1 player if 0 or 2 player if 1 
         # 2 player mode is so buggy... In other words, don't play the game in 2 player mode
         # I'll hopefully address this in version 1.4
