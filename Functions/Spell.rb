@@ -16,9 +16,13 @@ def spell
     cprint("activated ","green")
     puts spellcard[:name]
     @@spelltrapfield.addcard(4,spellcard)	# Adds the spell to the spell field.
+    @@hand.removecard(spellcard)
+    graphicsupdate('')
     puts "Spell Field:"
     @@spelltrapfield.list
     puts "Evaluating spell data..."	
     eval(spellcard[:effect])
     @@spelltrapfield.removecard(spellcard)		# Deletes the spell from the spell field
+    @@spelltrapfield.list
+    graphicsupdate('')
 end

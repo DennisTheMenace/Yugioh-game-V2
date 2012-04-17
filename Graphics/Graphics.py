@@ -19,11 +19,11 @@ mfpos2 = [191,25]
 mfpos3 = [279,25]
 mfpos4 = [367,25]
 mfpos5 = [455,25]
-mfpos6 = [10,0]
-mfpos7 = [10,0]
-mfpos8 = [10,0]
-mfpos9 = [10,0]
-mfpos10 = [10,0]
+mfpos6 = [104,144]
+mfpos7 = [192,144]
+mfpos8 = [280,144]
+mfpos9 = [368,144]
+mfpos10 = [456,144]
 
 pygame.display.set_caption("Yugioh Game")
 image_surf = pygame.image.load("../Resources/Images/Field.jpg").convert()
@@ -90,7 +90,7 @@ while done==False:
     if source6 != "0":
        
         mf6image = pygame.image.load(source6)
-        screen.blit(mf7image, mfpos6)
+        screen.blit(mf6image, mfpos6)
     source7 = f.readline()
     source7 = source7[:-1]
     if source7 != "0":

@@ -59,7 +59,6 @@ def activephase(currentplayer)
      puts "Current player is #{$activeplayer}"
      puts $activeplayer
      puts currentplayer
-     sleep 1
      playerset($testing)
      puts "End phase"
      routinecheck('endphase-start')
@@ -70,7 +69,7 @@ def activephase(currentplayer)
      
      response = gets.chomp
      $turncount += 1
-     sleep 1
+
      $file.puts("#{$usr1} Ended turn #{$turncount}")
      puts "Ended turn"
   end

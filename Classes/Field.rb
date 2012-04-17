@@ -31,8 +31,10 @@ class FieldController
   counter = 0
   @allspaces.each {|fieldspace|
   if fieldspace[2] == card and counter == 0
-    fieldspace[0] = 0
-    counter = 1
+      fieldspace[0] = 0
+      fieldspace[1] = 0
+      fieldspace[2] = 0
+      counter = 1
   end
   }
   end
