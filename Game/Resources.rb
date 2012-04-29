@@ -22,7 +22,7 @@ require '../Extra/Colourtext.rb'	# Provides the ability to used coloured text ST
 
 require '../Functions/Help.rb' 		# More help coming soon...
 
-
+require '../Extra/Parser.rb'        # Will start work on this again soon
 
 require '../Functions/Discard.rb'		# Discard a card method
 require '../Functions/Summon.rb'		# Summon a monster method
@@ -33,13 +33,12 @@ require '../Functions/Trap.rb'		# Set a trap method
 
 require '../Functions/Battle.rb'		# Battle a monster method
 
-#require 'Load.rb'		# Method for loading a savegame/scenario
+require '../Functions/Load.rb'		# Method for loading a savegame/scenario
 
 
 require '../Functions/Close.rb'		# Method for closing down the game safely
 
 
 #require 'Update.rb'
-#require 'Trap.rb'		# Set and activate trap cards STATUS untested INFO: Early stages of implementation
 #require 'Testing.rb'
 
