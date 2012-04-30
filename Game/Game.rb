@@ -4,7 +4,7 @@
 
 # Made by Joshua Rowe
 
-require 'Resources.rb' # Imports "Resources.rb" which in turn imports all the other required files.
+require_relative 'Resources.rb' # Imports "Resources.rb" which in turn imports all the other required files.
 
 # Open the log
   

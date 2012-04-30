@@ -81,11 +81,12 @@ class FieldController
     def selectcard
         selected = []
         @allspaces.each{|card| 
-                puts card[2][:name]
-                selected.push(card[2])
+                if card[0] == 1
+                    puts card[2][:name]
+                    puts card[2]
+                    selected.push(card[2])
+                end
         } 
-        
-        
         response = gets.to_i
         response -= 1
         return selected[response]

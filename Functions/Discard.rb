@@ -7,7 +7,7 @@
 def discard(type) # Provide a string input of spell, monster, trap or all to determine the type of the card being discarded.
   
     playerset('unknown')
-    discardcard = $player1hand.selectcard("all")
+    discardcard = $player1hand.selectcard(type)
     $player1graveyard.addcard(discardcard)
     $player1hand.removecard(discardcard)
 end

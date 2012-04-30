@@ -1,17 +1,12 @@
-#!/usr/bin/env ruby
+# MAJOR WIP
 
-# In Resources.rb? - Yes
+# Idea is to have a compendium of the cards until I get the database up and running
+# Another good idea is some documentation on all cards with semi-complex + effects. This
+# will allow other people (and myself) to use the cards and maintain them in any way. Then
+# again that might not be necessary as the only real reason to modify them after creation
+# is to edit them to new standards or systems. Will need more thought on this.
 
-# Testing deck.
-
-# If you wish to add a card to the deck follow these steps:
-
-# 1. Add the hash to the current list of cards. You must include these keys - id, name, type, atk, def and level (monsters only) and effect (for spells and traps so far, they can be left blank) 
-# 2. Add the hash to the $deck1 and $deck2 variables after the last one.
-# 3. Add the name of the card to the namelist variable
-
-decktitle = "Testing Deck"
-
+Celtic Guardian
 celticguardian = {:id => 1, :name => "Celtic Guardian", :type => "monster", :desc => "An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.", :atk => 1400, :def => 1200, :level => 4, :effect => "", :file => "../Resources/Images/CelticGuardian.jpg"}
 #Celtic Guardian STATUS: working
 card2 = {:id => 2, :name => "Pot of Greed", :type => "spell", :desc => "Draw 2 card from your deck", :effect => "2.times do draw($activeplayer,'yes', false) end", :file => "../Resources/Images/PotofGreed.jpg"} 
@@ -53,12 +48,3 @@ card14 = {:id => 14, :name => "Sakuretsu Armor", :type => "trap", :desc => "Acti
 card15 = {:id => 15, :name => "", :type => "spell", :desc => "", :effect => "", :file => ""}
 # No card defined yet
 card16 = {:id => 16, :name => "Mythical Beast Cerberus", :type => "monster",:desc => "Each time a Spell Card is activated, place 1 Spell Counter on this card. This card gains 500 ATK for each Spell Counter on it. If this card attacks or is attacked, remove all Spell Counters from it at the end of the Battle Phase.", :atk => 1400, :def => 1400, :level => 4, :effect => "", :file => "../Resources/Images/MythicalBeastCerberus.jpg"}
-
-$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16]
-# card15 omitted due to card15 being an empty card
-$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16]
-# card15 omitted due to card15 being an empty card
-
-
-$namelist = []
-$deck1.each{|name| $namelist.push(name[:name])}

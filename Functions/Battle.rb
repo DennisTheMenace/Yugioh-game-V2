@@ -13,10 +13,12 @@ def battle
     battle = card1[:atk] - card2[:atk]
     if battle > 0
         outcome = 0
+        @@emonsterfield.removecard(card2)
     elsif battle < 0
         outcome = 1
+        @@monsterfield.removecard(card1)
     elsif battle == 0
-        outcome - 2
+        outcome = 2
     else
         puts "There has been an error."
     end

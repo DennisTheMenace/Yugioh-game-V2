@@ -13,15 +13,16 @@ def initialise(loadfile)
     # Resize needed images
   
     if $testing == 1
-        require '../Extra/Parser.rb'
+        require_relative 'Testing.rb'
+        require_relative '../Extra/Parser.rb'
     end
  
     # Initialise graphics if graphics mode is on
-    if $graphics == 1
+    #if $graphics == 1
         #require 'RMagick'
-        require '../Graphics/GraphicsHandler.rb'
+    require_relative '../Graphics/GraphicsHandler.rb'
         #graphicsinit
-    end
+    #end
     # Load game
     if $loadgame == true
         loadgame(loadfile)

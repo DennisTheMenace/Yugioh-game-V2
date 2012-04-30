@@ -6,6 +6,7 @@
 $ginterface = File.new("cards.txt", "w+")
 
 def graphicsupdate(mode)
+    if $graphics == 1
     playerset('')
     $ginterface = File.new("cards.txt", "w+")
     $ginterface.puts($monsterfield1.space1[2][:file])
@@ -19,5 +20,6 @@ def graphicsupdate(mode)
     $ginterface.puts($spelltrapfield1.space4[2][:file])
     $ginterface.puts($spelltrapfield1.space5[2][:file])
     $ginterface.close
+    end
 
 end
