@@ -11,48 +11,48 @@
 # 3. Add the name of the card to the namelist variable
 
 decktitle = "Testing Deck"
-
-celticguardian = {:id => 1, :name => "Celtic Guardian", :type => "monster", :desc => "An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.", :atk => 1400, :def => 1200, :level => 4, :effect => "", :file => "../Resources/Images/CelticGuardian.jpg"}
+Card = Struct.new(:id, :name, :type, :desc, :atk, :def, :level, :effect, :file)
+celticguardian = Card.new(1, "Celtic Guardian", "monster", "An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.", 1400, 1200, 4, "", "../Resources/Images/CelticGuardian.jpg")
 #Celtic Guardian STATUS: working
-card2 = {:id => 2, :name => "Pot of Greed", :type => "spell", :desc => "Draw 2 card from your deck", :effect => "2.times do draw($activeplayer,'yes', false) end", :file => "../Resources/Images/PotofGreed.jpg"} 
+card2 = Card.new(2, "Pot of Greed", "spell", "Draw 2 card from your deck", nil, nil, nil, "2.times do draw($activeplayer,'yes', false) end", "../Resources/Images/PotofGreed.jpg")
 #Pot of Greed STATUS: working
-card3 = {:id => 3, :name => "Trap Hole", :type => "trap", :desc => "Activate only when your opponent Normal Summons or Flip Summons a monster with 1000 or more ATK. Destroy that monster.", :effect => "", :file => "../Resources/Images/TrapHole.jpg"}
-#Trap Hole STATUS: not working INFO: Trap cards haven't been implemented yet
-card4 = {:id => 4, :name => "Spike Seadra", :type => "monster", :desc => "Using the spikes sprouting from its body, this creature stabs its opponents and floods them with electricity.", :atk => 1600, :def => 1300, :level => 5, :effect => "", :file => "../Resources/Images/SpikeSeadra.jpg"}
+card3 = Card.new(3, "Trap Hole", "trap", "Activate only when your opponent Normal Summons or Flip Summons a monster with 1000 or more ATK. Destroy that monster.", nil, nil, nil, "", "../Resources/Images/TrapHole.jpg")
+#Trap Hole STATUS: not working INFO: 
+card4 = Card.new(4,"Spike Seadra", "monster", "Using the spikes sprouting from its body, this creature stabs its opponents and floods them with electricity.", 1600, 1300, 5,"", "../Resources/Images/SpikeSeadra.jpg")
 #Spike Seadra STATUS: working
-card5 = {:id => 5, :name => "Lightning Vortex", :type => "spell", :desc => "Discard 1 card from your hand an destroy all monster on your opponents side of the field", :effect =>  "", :file => "../Resources/Images/LightningVortex.jpg"}
+card5 = Card.new(5, "Lightning Vortex","spell","Discard 1 card from your hand an destroy all monster on your opponents side of the field", nil,nil,nil,  "", "../Resources/Images/LightningVortex.jpg")
 #Lightning Vortex STATUS: working
-card6 = {:id => 6, :name => "Giant Soldier of Stone", :type => "monster",:desc => "A giant warrior made of stone. A punch from this creature has earth-shaking results.", :atk => 1300, :def => 2000, :level => 3, :effect => "", :file => "../Resources/Images/GiantSoldierofStone.jpg"}
+card6 = Card.new(6, "Giant Soldier of Stone", "monster", "A giant warrior made of stone. A punch from this creature has earth-shaking results.", 1300, 2000, 3, "", "../Resources/Images/GiantSoldierofStone.jpg")
 #Giant Soldier of Stone STATUS: working
-card7 = {:id => 7, :name => "Monster Reborn", :type => "spell",:desc => "Special Summon 1 monster from either player's Graveyard to your side of the field.", :effect => "", :file => "../Resources/Images/MonsterReborn.jpg"}
+card7 = Card.new(7, "Monster Reborn", "spell", "Special Summon 1 monster from either player's Graveyard to your side of the field.", nil,nil,nil, "", "../Resources/Images/MonsterReborn.jpg")
 #Monster Reborn  STATUS: untested
-card8 = {:id => 8, :name => "Obnoxious Celtic Guard", :type => "monster",:desc => "This card cannot be destroyed by battle with a monster that has 1900 or more ATK.",:atk => 1400, :def => 1200, :level => 4, :effect => "", :file => "../Resources/Images/ObnoxiousCelticGuardian.jpg"}
+card8 = Card.new(8, "Obnoxious Celtic Guard", "monster", "This card cannot be destroyed by battle with a monster that has 1900 or more ATK.", 1400, 1200, 4, "", "../Resources/Images/ObnoxiousCelticGuardian.jpg")
 #Obnoxious Celtic Guardian STATUS: working
-card9 = {:id => 9, :name => "Summoned Skull", :type => "monster",:desc => "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.",:atk => 2500, :def => 1200, :level => 6, :effect => "", :file => "../Resources/Images/SummonedSkull.jpg"}
+card9 = Card.new(9, "Summoned Skull", "monster", "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.", 2500, 1200, 6, "", "../Resources/Images/SummonedSkull.jpg")
 #Summoned Skull STATUS: working
-card10 = {:id => 10, :name => "Dark Magician", :type => "monster",:desc => "The ultimate wizard in terms of attack and defense.", :atk => 2500, :def => 2100, :level => 7, :effect => "", :file => "../Resources/Images/DarkMagician.jpg"}
+card10 = Card.new(10, "Dark Magician", "monster","The ultimate wizard in terms of attack and defense.",2500, 2100, 7, "", "../Resources/Images/DarkMagician.jpg")
 #Dark Magician STATUS: working
-card11 = {:id => 11, :name => "Hand Destruction", :type => "spell", :desc => "Both players discard 2 cards to the graveyard then draw 2 cards.", :effect => 
+card11 = Card.new(11, "Hand Destruction", "spell", "Both players discard 2 cards to the graveyard then draw 2 cards.",nil,nil,nil,
 "2.times do discard('all') end
-2.times do draw($activeplayer,'yes', false) end", :file => "../Resources/Images/HandDestruction.png"}
+2.times do draw($activeplayer,'yes', false) end","../Resources/Images/HandDestruction.png")
 
-card12 = {:id => 12, :name => "Compulsory Evacuation Device", :type => "trap", :desc => "Return 1 monster on the field to it's owner's hand.", :effect => 'puts "Not implemented yet"'}
+card12 = Card.new(12, "Compulsory Evacuation Device","trap", "Return 1 monster on the field to it's owner's hand.",nil,nil,nil, 'puts "Not implemented yet"')
     
 $fevent1 = "standbyphase-start"
 $faction1 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:level] += 1')"
 $fevent2 = "all"
 $faction2 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:atk] = space[2][:level] * 300')"
-card13 = {:id => 13, :name => "Fortune Lady Water", :type => "monster",:desc => "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", :atk => 0, :def => 0, :level => 4, :file => "../Resources/Images/FortuneLadyWater.jpg", :effect => "RoutineController.addroutine($fevent1, $faction1)
+card13 = Card.new(13, "Fortune Lady Water", "monster", "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", 0, 0, 4, "../Resources/Images/FortuneLadyWater.jpg", :effect => "RoutineController.addroutine($fevent1, $faction1)
     
     RoutineController.addroutine($fevent2,$faction2)"
-}
+)
 #Fortune Lady Water STATUS: semi-working INFO: Mostly working, level and atk+def modifiers are working, other effect isn't yet
 
-card14 = {:id => 14, :name => "Sakuretsu Armor", :type => "trap", :desc => "Activate only when your opponent declares an attack . Destroy the attacking monster .", :effect => 'puts "Not implemented yet"'}
+card14 = Card.new(14,"Sakuretsu Armor", "trap", "Activate only when your opponent declares an attack . Destroy the attacking monster .", nil,nil,nil, 'puts "Not implemented yet"')
 #Sakuretsu Armor STATUS: not working INFO: Trap cards haven't been implemented yet
-card15 = {:id => 15, :name => "", :type => "spell", :desc => "", :effect => "", :file => ""}
+card15 = Card.new(15, "", "spell", "",nil,nil,nil, "",  "")
 # No card defined yet
-card16 = {:id => 16, :name => "Mythical Beast Cerberus", :type => "monster",:desc => "Each time a Spell Card is activated, place 1 Spell Counter on this card. This card gains 500 ATK for each Spell Counter on it. If this card attacks or is attacked, remove all Spell Counters from it at the end of the Battle Phase.", :atk => 1400, :def => 1400, :level => 4, :effect => "", :file => "../Resources/Images/MythicalBeastCerberus.jpg"}
+card16 = Card.new(16, "Mythical Beast Cerberus", "monster","Each time a Spell Card is activated, place 1 Spell Counter on this card. This card gains 500 ATK for each Spell Counter on it. If this card attacks or is attacked, remove all Spell Counters from it at the end of the Battle Phase.", 1400, 1400,  4, "", "../Resources/Images/MythicalBeastCerberus.jpg")
 
 $deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16]
 # card15 omitted due to card15 being an empty card
