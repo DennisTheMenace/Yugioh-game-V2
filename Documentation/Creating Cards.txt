@@ -1,0 +1,12 @@
+Creating Cards:
+
+To create additional cards to use in the game you have to provide adequate data to fill a list of keys. In order, these are the required fields which must (mostly) me provided.
+
+Data:
+id
+Name
+Level (if a monster)
+Attack
+Defense
+Effect
+Image file

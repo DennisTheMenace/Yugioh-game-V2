@@ -1,0 +1,29 @@
+Extending Basics:
+
+
+What do you need to extend this game?
+All you need is some basic ruby knowledge, an understanding of the basic structure of the game and some basic logic skills.
+
+Must do:
+Before anything is going to work your ruby script/s must be entered into ”Resources.rb” like this:
+require_relative ”example.rb”
+
+Notes on editing the core game:
+Before you edit the core game scripts I would recommend instead creating a folder called \test\ so that you can just overwrite the link in "Resources.rb" and replace it with "..\test\summon.rb" This means that when I release a new version all you have to do is copy and paste the test folder into the new source and edit "Resouces.rb"
+
+Commands:
+If your extending the game with new commands you must edit them into ”Commands.rb” First you're going to have to find the statement at the bottom of ”Commands.rb” which looks like this:
+elsif response == ”newcmd”
+   # Command...
+Now, I've provided this command in the source so anyone can test new commands including me =)
+All that must be done is to replace ”# Command...” with your actual command which is ”usually” a call to a function. Then after running the game you can just type newcmd and it will perform whatever you told it to do.
+
+Creating functions:
+For simple commands, you can just type the code into the command in ”Command.rb” but for larger extensions of core gameplay you will probably have to create functions or classes. To create a function we use def. E.g.
+def examplefunction
+   # Function code...
+end
+
+
+
+

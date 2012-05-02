@@ -1,0 +1,32 @@
+Basics:
+
+Where to start?
+
+
+The game was developed using Ruby 1.9.3, Python 2.7? and Pygame ???
+
+The project structure is reasonably logical (I hope)
+
+Folder structure:
+-Classes (ruby scripts containing classes e.g. Field controller, life points etc...)
+-Documentation (documentation regarding the game (not Yugioh) and it's installation and usage.)
+-Extra (contains extra extensions to the game which aren't necessary for the core experience, it also may h old features which are used widely but do not fit in the other categories.)
+-Functions (contains all the functions which are used in the core game.)
+-Game (all the ruby scripts relating to the actual live gameplay e.g. Setup scripts, phases loop, command input etc...)
+-Graphics (all the code to handle the graphics side of the game.)
+-Resources (holds all the external resources needed for the game)
+   -Cards (will hold data for each card until I get the database up and running.)
+   -Decks (stores the ruby scripts for your decks. Only 1 deck currently and that's the testing deck. Eventually you will be able to put a deck together online or share them with others.)
+   -Images (stores images which are needed for the game and specific cards.)
+   -Scenarios (will allow you to download or save a scenario/save of a game to play.)
+
+Game Initialisation:
+
+The first thing which happens when you run ”Game.rb” is it imports ”Resources.rb” which in turn imports all the necessary ruby scripts for the core game.The setting up of all the variables and settings is handled in ”Setup.rb” it contains options such as graphics on/off, 2 or 1 player, load game etc...
+After all initialisation processes are over the game starts in the main game loop in ”Game.rb” This then moves to the activephase function which holds the loop which cycles through the phases incrementing at the end of each phase and swapping players at the end of each turn.
+
+Phases:
+
+Things you need to know and/or should take into account.
+1. ”playerset(’’)” is your go to when starting any extension functions etc. It allows you to access both player's variables depending on whose turn it is.
+2. 

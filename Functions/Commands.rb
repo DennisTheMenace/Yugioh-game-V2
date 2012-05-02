@@ -101,6 +101,8 @@ def command(player,user_response)
       puts "This function is in development"
     elsif response == "decklist" # Outputs a list of names of all your cards in your deck
       puts $namelist
+    elsif response == "save"
+        save
     else
       cputs("This does not compute",'yellow')
     end
