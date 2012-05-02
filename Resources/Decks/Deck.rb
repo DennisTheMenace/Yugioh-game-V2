@@ -42,10 +42,8 @@ $fevent1 = "standbyphase-start"
 $faction1 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:level] += 1')"
 $fevent2 = "all"
 $faction2 = "$monsterfield1.updatespace('Fortune Lady Water','space[2][:atk] = space[2][:level] * 300')"
-card13 = Card.new(13, "Fortune Lady Water", "monster", "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", 0, 0, 4, "../Resources/Images/FortuneLadyWater.jpg", :effect => "RoutineController.addroutine($fevent1, $faction1)
-    
-    RoutineController.addroutine($fevent2,$faction2)"
-)
+card13 = Card.new(13, "Fortune Lady Water", "monster", "This card's ATK and DEF are equal to its Level x 300 . During each of your Standby Phases , increase the Level of this card by 1 (max 12) . When this card is Special Summoned while you control a face-up Fortune Lady' monster except 'Fortune Lady Water', draw 2 cards .", 0, 0, 4, "RoutineController.addroutine($fevent1, $faction1)
+    RoutineController.addroutine($fevent2,$faction2)", "../Resources/Images/FortuneLadyWater.jpg")
 #Fortune Lady Water STATUS: semi-working INFO: Mostly working, level and atk+def modifiers are working, other effect isn't yet
 
 card14 = Card.new(14,"Sakuretsu Armor", "trap", "Activate only when your opponent declares an attack . Destroy the attacking monster .", nil,nil,nil, 'puts "Not implemented yet"')

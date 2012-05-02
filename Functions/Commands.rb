@@ -82,20 +82,22 @@ def command(player,user_response)
     
     elsif response == "test" and $testing == 1
         puts "Used for testing anything at all"
-        playerset('')
-        $ginterface = File.new("cards.txt", "w+")
-        $ginterface.puts($monsterfield1.space1[2][:file])
-        $ginterface.puts($monsterfield1.space2[2][:file])
-        $ginterface.puts($monsterfield1.space3[2][:file])
-        $ginterface.puts($monsterfield1.space4[2][:file])
-        $ginterface.puts($monsterfield1.space5[2][:file])
-        $ginterface.puts($spelltrapfield1.space1[2][:file])
-        $ginterface.puts($spelltrapfield1.space2[2][:file])
-        $ginterface.puts($spelltrapfield1.space3[2][:file])
-        $ginterface.puts($spelltrapfield1.space4[2][:file])
-        $ginterface.puts($spelltrapfield1.space5[2][:file])
-        $ginterface.close
-       
+        #playerset('')
+        #$ginterface = File.new("cards.txt", "w+")
+        #$ginterface.puts($monsterfield1.space1[2][:file])
+        #$ginterface.puts($monsterfield1.space2[2][:file])
+        #$ginterface.puts($monsterfield1.space3[2][:file])
+        #$ginterface.puts($monsterfield1.space4[2][:file])
+        #$ginterface.puts($monsterfield1.space5[2][:file])
+        #$ginterface.puts($spelltrapfield1.space1[2][:file])
+        #$ginterface.puts($spelltrapfield1.space2[2][:file])
+        #$ginterface.puts($spelltrapfield1.space3[2][:file])
+        #$ginterface.puts($spelltrapfield1.space4[2][:file])
+        #$ginterface.puts($spelltrapfield1.space5[2][:file])
+        #$ginterface.close
+        
+        
+        $debug.test
         
     elsif response == "options" 
       puts "This function is in development"

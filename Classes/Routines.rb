@@ -10,9 +10,10 @@ class RoutineController				# Creates the class
   def self.routinecheck(event)			# Method for 
     @@routines.each {|routine|
     if routine[0] == 'all'
+      $debug.debuglog(routine[1])
       eval routine[1] 
     elsif routine[0] == event
-    #puts routine[1]
+      $debug.debuglog(routine[1])
       eval routine[1]
     end
     }

@@ -46,5 +46,13 @@ class AreaController
         return returncard
         
     end
+    def findcard(cardname)
+        counter = 0
+        @allcards.each {|name|
+            if name[:name] == cardname
+                return name
+            end
+        }
+    end
 end
 

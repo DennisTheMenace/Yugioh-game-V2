@@ -6,6 +6,7 @@
 
 def close
   $file.close				# Closes the log file
+  $log2.close
   puts "Files flushed properly"		# Basically means that file has been closed properly instead of force quitting which MAY/COULD result in 						#memory leaks
   abort("Exiting")			# Actually exits the game but not before outputting 'Exiting'
 end

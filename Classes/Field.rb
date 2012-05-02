@@ -49,7 +49,7 @@ class FieldController
     counter = 0
     @allspaces.each {|name|
     if name[2][:id] == cardname
-      return name
+      return name[2]
     end
     }
   end
@@ -73,8 +73,12 @@ class FieldController
     def updatespace(name,update)
         @allspaces.each {|space|
         if space[2][:name] == name
-            eval(update)
             
+            $debug.debuglog(space[2][:effect])
+            $debug.debuglog(update)
+            eval(update)
+            $debug.debuglog('space update completed')
+            return
         end
         }
     end

@@ -62,8 +62,9 @@ def activephase(currentplayer)
      playerset($testing)
      puts "End phase"
      routinecheck('endphase-start')
-     
-     if @@hand.size > 6
+     puts @@hand.allcards
+     puts @@hand.allcards.size
+     if @@hand.allcards.size > 6
          discard('all')
      
      end
@@ -71,8 +72,8 @@ def activephase(currentplayer)
      
      response = gets.chomp
      $turncount += 1
-
-     $file.puts("#{$usr1} Ended turn #{$turncount}")
+     $debug.debuglog($activeplayer)
+     $file.puts("#{@@name} Ended turn #{$turncount}")
      puts "Ended turn"
   end
     
@@ -87,10 +88,17 @@ def activephase(currentplayer)
   $activephase += 1
   if $playermode == 1
     if $activephase > 5 # After "End phase" returns the active phase back to draw phase.
-    $activeplayer -= 1 unless $activeplayer == 0
-    $activeplayer += 1 unless $activeplayer == 1
+    $debug.debuglog('swapping player')
     
+    if $activeplayer == 1
+        $activeplayer = 0
+    else
+        $activeplayer = 1
+    end
+    
+   
     $activephase = 1
+    puts $activeplayer
     end
   else
     if $activephase > 5 # After "End phase" returns the active phase back to draw phase.

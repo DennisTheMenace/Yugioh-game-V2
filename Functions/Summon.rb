@@ -15,6 +15,7 @@ def summon
     if summoncard[:level] <= 4
         @@monsterfield.addcard(0,summoncard)
         graphicsupdate('')
+        puts summoncard[:effect]
         eval(summoncard[:effect])
         @@hand.removecard(summoncard)
         puts "Monsterfield:"
