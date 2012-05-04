@@ -18,7 +18,7 @@ Folder structure:
    -Cards (will hold data for each card until I get the database up and running.)
    -Decks (stores the ruby scripts for your decks. Only 1 deck currently and that's the testing deck. Eventually you will be able to put a deck together online or share them with others.)
    -Images (stores images which are needed for the game and specific cards.)
-   -Scenarios (will allow you to download or save a scenario/save of a game to play.)
+   -Saves (will allow you to download or save a scenario/save of a game to load and play.)
 
 Game Initialisation:
 
@@ -30,3 +30,6 @@ Phases:
 Things you need to know and/or should take into account.
 1. ”playerset(’’)” is your go to when starting any extension functions etc. It allows you to access both player's variables depending on whose turn it is.
 2. 
+
+Graphics:
+At the moment the graphics is done in Python and Pygame (lol) and requires a second terminal open to run it.

@@ -62,9 +62,7 @@ def activephase(currentplayer)
      playerset($testing)
      puts "End phase"
      routinecheck('endphase-start')
-     puts @@hand.allcards
-     puts @@hand.allcards.size
-     if @@hand.allcards.size > 6
+          if @@hand.allcards.size > 6
          discard('all')
      
      end

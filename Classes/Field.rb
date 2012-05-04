@@ -87,10 +87,14 @@ class FieldController
         @allspaces.each{|card| 
                 if card[0] == 1
                     puts card[2][:name]
-                    puts card[2]
+                    #puts card[2]
                     selected.push(card[2])
                 end
         } 
+        if selected.empty? == true
+            puts "No cards can be selected."
+            return
+        end
         response = gets.to_i
         response -= 1
         return selected[response]

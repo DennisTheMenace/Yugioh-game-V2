@@ -46,15 +46,21 @@ card13 = Card.new(13, "Fortune Lady Water", "monster", "This card's ATK and DEF 
     RoutineController.addroutine($fevent2,$faction2)", "../Resources/Images/FortuneLadyWater.jpg")
 #Fortune Lady Water STATUS: semi-working INFO: Mostly working, level and atk+def modifiers are working, other effect isn't yet
 
-card14 = Card.new(14,"Sakuretsu Armor", "trap", "Activate only when your opponent declares an attack . Destroy the attacking monster .", nil,nil,nil, 'puts "Not implemented yet"')
+card14 = Card.new(14,"Sakuretsu Armor", "trap", "Activate only when your opponent declares an attack . Destroy the attacking monster .", nil,nil,nil, 'puts "Not implemented yet"',"../Resources/Images/SakuretsuArmor.png")
 #Sakuretsu Armor STATUS: not working INFO: Trap cards haven't been implemented yet
 card15 = Card.new(15, "", "spell", "",nil,nil,nil, "",  "")
 # No card defined yet
 card16 = Card.new(16, "Mythical Beast Cerberus", "monster","Each time a Spell Card is activated, place 1 Spell Counter on this card. This card gains 500 ATK for each Spell Counter on it. If this card attacks or is attacked, remove all Spell Counters from it at the end of the Battle Phase.", 1400, 1400,  4, "", "../Resources/Images/MythicalBeastCerberus.jpg")
+card17 = Card.new(17, "Mystical Space Typhoon", "spell","Target 1 Spell/Trap Card on the field; destroy that target.",nil,nil,nil,"","../Resources/Images/MysticalSpaceTyphoon.png" )
+card18 = Card.new(18, "Fissure", "spell", "Destroy the 1 face-up monster your opponent controls that has the lowest ATK. (If it's a tie, you get to choose.)", nil,nil,nil,
+"@@emonsterfield.removecard(@@emonsterfield.selectcard)","../Resources/Images/Fissure.png
 
-$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16]
+                  
+")
+
+$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18]
 # card15 omitted due to card15 being an empty card
-$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16]
+$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18]
 # card15 omitted due to card15 being an empty card
 
 

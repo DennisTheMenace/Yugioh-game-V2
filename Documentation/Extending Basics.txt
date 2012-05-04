@@ -23,6 +23,7 @@ For simple commands, you can just type the code into the command in ”Command.r
 def examplefunction
    # Function code...
 end
+Throw it in a .rb and link it to Commands.rb or wherever it's usage is required.
 
 
 

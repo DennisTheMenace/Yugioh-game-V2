@@ -7,8 +7,8 @@
 def save
 
     playerset('')
-    $savefile = File.new("save.txt", "w")
+    $savefile = File.new("../Resources/Saves/save.txt", "w")
     $savefile.puts(@@hand, @@ehand)
-  
+    cputs("saved", "green")
 
 end
