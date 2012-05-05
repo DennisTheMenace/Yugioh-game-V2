@@ -19,8 +19,13 @@ def command(player,user_response)
         puts 'Monster field:'
         playerset('')
         @@monsterfield.list(false,["name"])
-    elsif response == "mfi"
-        array = ["name","level","atk","def"]
+    elsif response == "mfi" or response == "mfi -d"
+        
+        if response == "mfi -d"
+            array = ["id", "name", "type", "desc", "atk", "def", "level", "effect", "file"]
+        else
+            array = ["name","level","atk","def"]
+        end
         @@monsterfield.list(true,array)
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'

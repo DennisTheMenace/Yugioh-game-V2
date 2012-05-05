@@ -21,6 +21,7 @@ atrp = Activate a trap
 lp = Show lifepoints
 hc = Show hand count
 mf = Show monster field
+mfi = Show detailed info of all monsters on your field
 gv = Show graveyard
 exit = Exit's the game
 help = Lists commands and can also give you a tutorial*
