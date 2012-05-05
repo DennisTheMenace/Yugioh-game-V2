@@ -17,7 +17,8 @@ class Debugger
         @@hand.addcard(specific)
     end
     def test
-        puts $monsterfield1.space1[2][:atk]
+        
+        $monsterfield1.find("lowest atk")
     end
 end
 $debug = Debugger.new

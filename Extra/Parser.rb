@@ -4,10 +4,14 @@
 
 # A card effect parser
 
-# Note - Put a space in front of a . (full stop)
+# Notes: - Put a space in front of a . (full stop)
+#        - everything is turned into lowercase so far, may add extra parameter to control this.
 
 def is_number?(i)
   true if Float(i) rescue false
+end
+def nextword?(location)
+    
 end
 
 
@@ -84,5 +88,46 @@ def parse(string)
   
 }
   
+end
+
+
+# For use when providing parameters to Field
+
+def fieldparse(string,whatcase)
+    
+    string = string.downcase
+    array = string.split(/ /)
+    @lowest = 10000
+    array.each {|x|
+    if x == "lowest"
+        location = array.index x
+        nextword = location + 1
+        
+        if array[nextword] == "atk" or "def"
+            para = "#{array[nextword]}"
+        elsif array[nextword] == "attack"
+            para = "atk"
+        elsif array[nextword] == "def" or "defense" or "defence"
+            para = "def"
+        end
+        #puts para
+        @lowest = { "atk" => 10000,
+            "def" => 10000,
+        }
+        cards = @@monsterfield.search(1,0/1,false)
+        #puts "cards:"
+        #puts cards
+        #puts "Finished cards"
+        cards.each {|card|
+            #puts card.type
+            #puts card[para]
+            #puts @lowest
+            @lowest = card if card[para] < @lowest[para] 
+        }
+        
+    end
+    }
+    #puts "returning card from parser..."
+    return @lowest
 end
 

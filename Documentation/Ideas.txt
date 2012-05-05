@@ -1,0 +1,3 @@
+Extending Processes Hypothesis:
+
+1. Isolation of new code.

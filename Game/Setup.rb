@@ -15,7 +15,7 @@ def setup
 
     $loadgame = false	# Specifies of your loading a game/save/scenario
 			# Set to false for now as it isn't stable yet
-    $loadpointer
+    $loadpointer = ""
     $colour = 0		# Disable/Enable coloured text if 0/1 respectively
 
     $version = 1.0	# Game version

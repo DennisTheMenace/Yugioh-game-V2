@@ -6,3 +6,4 @@ Todo:
 4. Correctly comment more code
 5. Get test website with deck builder up and running
 6. Increase rules in Parser
+7. Add ability to determine what commands can be run

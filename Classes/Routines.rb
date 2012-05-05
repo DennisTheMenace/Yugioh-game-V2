@@ -8,22 +8,39 @@
 class RoutineController				# Creates the class
   @@routines = []				# Sets up the variable which stores all routines
   def self.routinecheck(event)			# Method for 
+    #puts event
     @@routines.each {|routine|
     if routine[0] == 'all'
+    #puts event
+    #puts "event = all"
       $debug.debuglog(routine[1])
       eval routine[1] 
     elsif routine[0] == event
+    #puts "event:"
+    #puts event
       $debug.debuglog(routine[1])
+    #puts "action:"
+    #puts routine[1]
       eval routine[1]
     end
     }
-  end
-  def self.addroutine(event,action)
-    @newroutine = [event,action]
-    @@routines.push(@newroutine)
-  end
-end
+    end
+    def self.addroutine(event,action)
+        @newroutine = [event,action]
+        @@routines.push(@newroutine)
+    end
+    def self.removeroutine(event,action)
+        counter = 0
+        @@routines.each { |routine|
+            if routine[0] == event and routine[1] == action and counter == 0
+                @@routines.delete(routine)
+                counter = 1
+            end
+            
+        }
 
+    end
+end
 def routinecheck(event)
-  RoutineController.routinecheck(event)
+    RoutineController.routinecheck(event)
 end

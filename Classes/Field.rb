@@ -27,16 +27,27 @@ class FieldController
     end
     }
   end
-  def removecard(card)						# Method for removing a card from the specific field you call
-  counter = 0
-  @allspaces.each {|fieldspace|
-  if fieldspace[2] == card and counter == 0
-      fieldspace[0] = 0
-      fieldspace[1] = 0
-      fieldspace[2] = 0
-      counter = 1
-  end
-  }
+  def removecard(card, dynamic)				# Method for removing a card from the specific field you call
+    counter = 0
+    if dynamic == false
+      @allspaces.each {|fieldspace|
+      if fieldspace[2] == card and counter == 0
+          
+          fieldspace[0] = 0
+          fieldspace[1] = 0
+          
+          string = 'fieldremove_' + "#{fieldspace[2][:name]}"
+          #puts string
+          routinecheck(string)
+          fieldspace[2] = 0
+          counter = 1
+          
+      end
+      }
+    else
+      fieldparse(dynamic,"lower")
+    end
+  
   end
   def list
     @allspaces.each {|fieldspace|
@@ -98,5 +109,10 @@ class FieldController
         response = gets.to_i
         response -= 1
         return selected[response]
+    end
+    def find(string)
+        card = fieldparse(string,false) 
+        #puts "returning card from Field.find"
+        return card
     end
 end

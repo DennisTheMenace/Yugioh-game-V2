@@ -22,7 +22,7 @@ def spell
     @@spelltrapfield.list
     puts "Evaluating spell data..."	
     eval(spellcard[:effect])
-    @@spelltrapfield.removecard(spellcard)		# Deletes the spell from the spell field
+    @@spelltrapfield.removecard(spellcard,false)		# Deletes the spell from the spell field
     @@spelltrapfield.list
     graphicsupdate('')
 end
