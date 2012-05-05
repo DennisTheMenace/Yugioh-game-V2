@@ -30,3 +30,35 @@ RoutineController.addroutine($fevent1, $faction1)
                   
 space[2][:def] = space[2][:level] * 300
 space update completed
+$monsterfield1.updatespace('Fortune Lady Water','space[2][:atk] = space[2][:level] * 300')
+RoutineController.addroutine($fevent1, $faction1)
+    RoutineController.addroutine($fevent2,$faction2)
+    RoutineController.addroutine($fevent3,$faction3)
+    RoutineController.addroutine($fevent4,$faction4)              
+                  
+space[2][:atk] = space[2][:level] * 300
+space update completed
+$monsterfield1.updatespace('Fortune Lady Water','space[2][:def] = space[2][:level] * 300')
+RoutineController.addroutine($fevent1, $faction1)
+    RoutineController.addroutine($fevent2,$faction2)
+    RoutineController.addroutine($fevent3,$faction3)
+    RoutineController.addroutine($fevent4,$faction4)              
+                  
+space[2][:def] = space[2][:level] * 300
+space update completed
+$monsterfield1.updatespace('Fortune Lady Water','space[2][:atk] = space[2][:level] * 300')
+RoutineController.addroutine($fevent1, $faction1)
+    RoutineController.addroutine($fevent2,$faction2)
+    RoutineController.addroutine($fevent3,$faction3)
+    RoutineController.addroutine($fevent4,$faction4)              
+                  
+space[2][:atk] = space[2][:level] * 300
+space update completed
+$monsterfield1.updatespace('Fortune Lady Water','space[2][:def] = space[2][:level] * 300')
+RoutineController.addroutine($fevent1, $faction1)
+    RoutineController.addroutine($fevent2,$faction2)
+    RoutineController.addroutine($fevent3,$faction3)
+    RoutineController.addroutine($fevent4,$faction4)              
+                  
+space[2][:def] = space[2][:level] * 300
+space update completed

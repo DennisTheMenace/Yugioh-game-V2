@@ -49,12 +49,35 @@ class FieldController
     end
   
   end
-  def list
-    @allspaces.each {|fieldspace|
-    if fieldspace[0] == 1
-      puts fieldspace[2][:name]
-    end
-    }
+  def list(amount,array)
+      if amount != false
+          
+            @allspaces.each {|fieldspace|
+                    
+                    if fieldspace[0] == 1
+    
+                        array.each {|element|
+                            print "#{element}: "
+                            puts fieldspace[2][element]
+                        
+                        }
+                        
+                    end
+                
+            }
+          
+        
+      else
+          array.each {|element|
+              @allspaces.each {|fieldspace|
+                  if fieldspace[0] == 1
+                      puts fieldspace[2][element]
+                  
+                  end
+                  
+              }
+          }
+      end
   end
   def findcard(cardname)
     counter = 0

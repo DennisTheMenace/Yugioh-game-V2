@@ -19,7 +19,8 @@ def summon
         eval(summoncard[:effect])
         @@hand.removecard(summoncard)
         puts "Monsterfield:"
-        @@monsterfield.list
+        array = ["name"]
+        @@monsterfield.list(false,array)
     elsif summoncard[:level] > 4
         puts "You must tribute a monster to summon this monster."
         puts "Would you like to continue? [y/n]"
@@ -33,7 +34,7 @@ def summon
             eval(summoncard[:effect])
             @@hand.removecard(summoncard)
             puts "Monsterfield:"
-            @@monsterfield.list
+            @@monsterfield.list(false,(:name))
         elsif response1 == 'n'
             puts "Returning..."
             return
