@@ -24,10 +24,11 @@ def activatetrap		# Being fully rewritten for v1.3
         puts trap[:name]
         trapchoice.push(trap)
     }
-    puts = "Which trap would you like to activate? [1,2,3,4,50"
+    puts = "Which trap would you like to activate? [1,2,3,4,5]"
     response = gets.to_i
     response -= 1
     eval(fieldtraps[response][:effect])
-    @@spelltrapfield.removecard(fieldtraps[response])
+    
+    @@spelltrapfield.removecard(fieldtraps[response],false)
 
 end

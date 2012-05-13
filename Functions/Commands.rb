@@ -17,7 +17,6 @@ def command(player,user_response)
       spell		
     elsif response == "mf"
         puts 'Monster field:'
-        playerset('')
         @@monsterfield.list(false,["name"])
     elsif response == "mfi" or response == "mfi -d"
         
@@ -30,6 +29,9 @@ def command(player,user_response)
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
       $player1graveyard.list
+    elsif response == "rp"
+        puts "Removed from play:"
+        @@outofplay.list
     elsif response == "lp"		# Display your current lifepoints
       playerset($testing)
       puts "You have #{$lp1.lifepoints}"
@@ -69,7 +71,7 @@ def command(player,user_response)
       puts "parsing..."
       parse(gets.to_s)
     elsif response == "eval" and $testing == 1
-      playerset($testing)
+      
       puts "Input password..."
       response = gets.chomp
       if response == "asd"

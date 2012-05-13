@@ -50,6 +50,8 @@ def setup
     $player2graveyard = AreaController.new
     $player2hand = AreaController.new
     $player2deck = AreaController.new
+    $player1outofplay = AreaController.new
+    $player2outofplay = AreaController.new
     $deck1.each{|card| $player1deck.addcard(card)}
     $deck1.each{|card| $player2deck.addcard(card)}
 

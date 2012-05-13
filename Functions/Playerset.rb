@@ -16,6 +16,8 @@ def playerset(mode)
         @@espelltrapfield = $spelltrapfield2
         @@graveyard = $player1graveyard
         @@egraveyard = $player2graveyard
+        @@outofplay = $player1outofplay
+        @@eoutofplay = $player2outofplay
     end
     if $activeplayer == 1
         @@name = $usr2
@@ -30,5 +32,7 @@ def playerset(mode)
         @@espelltrapfield = $spelltrapfield1
         @@graveyard = $player2graveyard
         @@egraveyard = $player1graveyard
+        @@outofplay = $player2outofplay
+        @@eoutofplay = $player1outofplay
     end
 end

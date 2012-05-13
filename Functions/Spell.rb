@@ -19,10 +19,10 @@ def spell
     @@hand.removecard(spellcard)
     graphicsupdate('')
     puts "Spell Field:"
-    @@spelltrapfield.list
+    @@spelltrapfield.list(false,[:name])
     puts "Evaluating spell data..."	
     eval(spellcard[:effect])
     @@spelltrapfield.removecard(spellcard,false)		# Deletes the spell from the spell field
-    @@spelltrapfield.list
+    @@spelltrapfield.list(false,[:name])
     graphicsupdate('')
 end

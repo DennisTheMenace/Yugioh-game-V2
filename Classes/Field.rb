@@ -38,7 +38,7 @@ class FieldController
           
           string = 'fieldremove_' + "#{fieldspace[2][:name]}"
           #puts string
-          routinecheck(string)
+          routinecheck(string,1)
           fieldspace[2] = 0
           counter = 1
           
@@ -108,7 +108,8 @@ class FieldController
         @allspaces.each {|space|
         if space[2][:name] == name
             
-            $debug.debuglog(space[2][:effect])
+            #$debug.debuglog(space[2][:effect])
+            $debug.debuglog("update:")
             $debug.debuglog(update)
             eval(update)
             $debug.debuglog('space update completed')

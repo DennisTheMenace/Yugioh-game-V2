@@ -5,7 +5,7 @@
 def activephase(currentplayer)
     if $activephase == 0
         $player1hand.addcard($deck1[11])
-        $player1hand.addcard($deck1[16])
+        $player1hand.addcard($deck1[17])
         if $loadgame != true	# If your loading a game it doesn't draw 5 cards for player 1 and player 2 if your in 2 player mode
             5.times do draw(0,"yes", false) end
             if $playermode == 1
@@ -15,32 +15,32 @@ def activephase(currentplayer)
     end
   if $activephase == 1
     
-    routinecheck('drawphase-start')
+    routinecheck('drawphase-start',1)
     #print $activeplayer
     #puts "#{$player1area)}'s turn"
     playerset($testing)
     #puts @@name
     puts "#{@@name}'s turn"
     puts "Draw Phase"
-    routinecheck('drawphase_draw')
+    routinecheck('drawphase_draw',1)
     draw($activeplayer,"yes", false)
     
     
-    routinecheck('drawphase_end')
+    routinecheck('drawphase_end',1)
     
   end
   if $activephase == 2
     if $testing == 0
       puts "Standby phase"
     end
-    routinecheck('standbyphase_start')
+    routinecheck('standbyphase_start',1)
 
   end
   while $activephase == 3
     playerset($testing)
     puts "Main phase 1"
     
-    routinecheck('mainphase_start')  
+    routinecheck('mainphase_start',1)  
     command($activeplayer,true)
     
     puts "End phase? [Y,y]"
@@ -49,13 +49,13 @@ def activephase(currentplayer)
     when /[Y,y]/
       $activephase = 4
       
-      routinecheck('mainphase_end')
+      routinecheck('mainphase_end',1)
     end
     
   end
   if $activephase == 4
     puts "Main phase 2"
-    routinecheck('mainphase2_start')
+    routinecheck('mainphase2_start',1)
   end
   if $activephase == 5
      puts "Current player is #{$activeplayer}"
@@ -63,7 +63,7 @@ def activephase(currentplayer)
      puts currentplayer
      playerset($testing)
      puts "End phase"
-     routinecheck('endphase_start')
+     routinecheck('endphase_start',1)
           if @@hand.allcards.size > 6
          discard('all')
      
