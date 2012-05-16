@@ -82,7 +82,7 @@ class FieldController
   def findcard(cardname)
     counter = 0
     @allspaces.each {|name|
-    if name[2][:id] == cardname
+    if name[2][:name] == cardname
       return name[2]
     end
     }
@@ -130,8 +130,17 @@ class FieldController
             puts "No cards can be selected."
             return
         end
-        response = gets.to_i
-        response -= 1
+        
+        if $debugplay == 1
+            response = $debugcommands[$debugplaycounter]
+            $debugplaycounter += 1
+            response = response.to_i
+            puts response
+        else
+            response = gets.to_i
+            response -= 1
+        end
+        
         return selected[response]
     end
     def find(string)

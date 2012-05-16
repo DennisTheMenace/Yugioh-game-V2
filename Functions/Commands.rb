@@ -10,9 +10,24 @@ def command(player,user_response)
     #if $testingmove != true
     #  response = $testingmove
     #end
-    response = gets.chomp
+    if $debugplaycounter == $debugplay.size
+       close 
+    end
+    if $debugplay == 1
+        response = $debugcommands[$debugplaycounter]
+        $debugplaycounter += 1
+        response = response.to_s
+        response = response.chomp
+        puts response
+    else
+        response = gets.chomp
+    end
+    
+    
     if response == "smn" or response == "Summon"	# Summon a monster
       summon
+    elsif response == "flipsmn" or response == "flipsummon"
+        flipsummon
     elsif response == "spl"
       spell		
     elsif response == "mf"
@@ -117,5 +132,6 @@ def command(player,user_response)
         save
     else
       cputs("This does not compute",'yellow')
+    
     end
 end

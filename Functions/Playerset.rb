@@ -2,6 +2,8 @@
 
 # In Resources.rb? - Yes
 
+# Sets up variables based on who's turn it is.
+
 def playerset(mode)
     if $activeplayer == 0
         @@name = $usr1

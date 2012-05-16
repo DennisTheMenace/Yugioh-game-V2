@@ -36,9 +36,16 @@ class AreaController
                 end
                 } 
         end
+        if $debugplay == 1
+            response = $debugcommands[$debugplaycounter]
+            $debugplaycounter += 1
+            response = response.to_i
+            puts response
+        else
+            response = gets.to_i
+            response -= 1
+        end
         
-        response = gets.to_i
-        response -= 1
         return alloftype[response]
     end
     def randomcard

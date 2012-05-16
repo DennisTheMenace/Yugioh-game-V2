@@ -9,7 +9,7 @@ $todo = []
 class RoutineController				# Creates the class
   @@routines = []				# Sets up the variable which stores all routines
   def self.routinecheck(event,includeall)			# Method for 
-    puts event
+    #puts event
     $debug.debuglog("routinecheck.called")
     $debug.debuglog(@@routines)
     $debug.debuglog("entering @@routines.each{}")

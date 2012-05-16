@@ -3,7 +3,7 @@
 # In Resources.rb? - Yes
 
 def activephase(currentplayer)
-    if $activephase == 0
+    if $activephase == 0 and $debugplay != 1
         $player1hand.addcard($deck1[11])
         $player1hand.addcard($deck1[17])
         if $loadgame != true	# If your loading a game it doesn't draw 5 cards for player 1 and player 2 if your in 2 player mode
@@ -44,7 +44,15 @@ def activephase(currentplayer)
     command($activeplayer,true)
     
     puts "End phase? [Y,y]"
-    response = gets.chomp
+      if $debugplaycounter == $debugplay.size
+          close 
+      end  
+    if $debugplay == 1
+        response = $debugcommands[$debugplaycounter]
+        $debugplaycounter += 1
+    else
+        response = gets.chomp
+    end 
     case response
     when /[Y,y]/
       $activephase = 4

@@ -2,17 +2,19 @@
 
 # In Resources.rb? - Yes
 
-# Sets up all the variables
+# Sets up all the variables and settings/options
 
 def setup
     
+    # *Options*
     
     $testing = 1		# Sets it to testing mode if 1 or not testing mode if 0
     $graphics = 0 		# Sets if graphics are enabled if 1 or disabled if 0
     $playermode = 1	# Sets the game to 1 player if 0 or 2 player if 1 
         # 2 player mode is so buggy... In other words, don't play the game in 2 player mode
         # I'll hopefully address this in version 1.4
-
+    $debugplay = 0
+    $debugplaypointer = ""
     $loadgame = false	# Specifies of your loading a game/save/scenario
 			# Set to false for now as it isn't stable yet
     $loadpointer = ""
@@ -29,6 +31,8 @@ def setup
         puts "Player 2 name: "
         $usr2 = gets.chomp
     end
+    
+    # *End of Options*
     
     # Lifepoints:
 

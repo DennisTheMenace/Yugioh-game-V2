@@ -14,7 +14,11 @@
 def draw(player,output,card)
     playerset('')
     if player == 0
-        draw = @@deck.randomcard
+        if card != false
+            draw = card
+        else
+            draw = @@deck.randomcard
+        end
         puts "You have drawn #{draw[:name]}"
         @@hand.addcard(draw)
         @@deck.removecard(draw)

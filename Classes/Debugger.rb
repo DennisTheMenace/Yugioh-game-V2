@@ -17,8 +17,17 @@ class Debugger
         @@hand.addcard(specific)
     end
     def test
-        
         $monsterfield1.find("lowest atk")
+    end
+    def debugplay
+        draw($activeplayer, 'yes', @@deck.findcard("Spirit of the Harp"))
+        draw($activeplayer, 'yes', @@deck.findcard("Dark Core"))
+        $debugcommands = []
+        IO.foreach "debug.txt" do |line|
+            $debugcommands.push(line)
+            
+        end
+        $debugplaycounter = 0
     end
 end
 $debug = Debugger.new

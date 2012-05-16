@@ -16,7 +16,11 @@ def initialise(loadfile)
         require_relative 'Testing.rb'
         require_relative '../Extra/Parser.rb'
     end
- 
+    
+    if $debugplay == 1
+        $debug.debugplay
+    end
+    
     # Initialise graphics if graphics mode is on
     #if $graphics == 1
         #require 'RMagick'
