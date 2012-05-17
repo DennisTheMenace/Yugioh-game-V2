@@ -10,6 +10,7 @@
 
 def summon
     playerset('unknown')                                # Sets variables
+    puts "stuff"
     summoncard = @@hand.selectcard("monster")           # Returns the card data for whatever card you choose which is handled within the class.
     if summoncard[:level] <= 4                          # Summon procedure if the monster is under level 4
         puts "Face-up attack mode or face-down defense mode. [1/2]"

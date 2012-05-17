@@ -9,4 +9,8 @@ Level (if a monster)
 Attack
 Defense
 Effect
-Image file
+Image file*
+
+* When adding an image make sure to use the appropriate naming conventions for the file, which is:
+Start of each word is a capital
+No spaces in file name

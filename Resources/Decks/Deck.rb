@@ -78,11 +78,15 @@ card19 = Card.new(19, "Dark Core", "spell","","Discard 1 card. Remove from play 
 card20 = Card.new(20, "Spirit of the Harp", "monster","", "A spirit that soothes the soul with the music of its heavenly harp.",750,500,2,"","../Resources/Images/PenguinSoldier.png")
 card21 = Card.new(21, "Penguin Soldier", "monster","flip-effect", "",750,500,2,"","../Resources/Images/SpiritOfTheHarp.png")
 card22 = Card.new(22, "Mystical Elf", "monster", "normal", "", 800, 2000, 4, "", "../Resources/Images/Todo/MysticalElf.jpg")
-card23 = Card.new(23, "Feral Imp", "monster", "normal", "", 1300, 1400, 4, "", "../Resources/Images/Todo/FeralImp.jpg")                
-                  
-$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20,card21,card22,card23]
+card23 = Card.new(23, "Feral Imp", "monster", "normal", "", 1300, 1400, 4, "", "../Resources/Images/Todo/FeralImp.jpg")
+$event = "all"
+$action = "array = @@graveyard.findcards('Dark Magician') if array.size >= 1 @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = space[2][:atk] + 300 * array.size') end"
+                 
+card24 = Card.new(24, "Dark Magician Girl", "monster", "", 2000, 1700, 6, "RoutineController.addroutine($event,$action)", "../Resources/Images/Todo/DarkMagicianGirl.jpg")
+                
+$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20]
 # card15 omitted due to card15 being an empty card
-$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20,card21,card22,card23]
+$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20]
 # card15 omitted due to card15 being an empty card
 
 
