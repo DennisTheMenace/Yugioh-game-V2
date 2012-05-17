@@ -76,7 +76,7 @@ card19 = Card.new(19, "Dark Core", "spell","","Discard 1 card. Remove from play 
                   ", "../Resources/Images/DarkCore.png")
                   
 card20 = Card.new(20, "Spirit of the Harp", "monster","", "A spirit that soothes the soul with the music of its heavenly harp.",750,500,2,"","../Resources/Images/PenguinSoldier.png")
-card21 = Card.new(21, "Penguin Soldier", "monster","flip-effect", "",800,2000,4,"","../Resources/Images/SpiritOfTheHarp.png")
+card21 = Card.new(21, "Penguin Soldier", "monster","flip-effect", "",750,500,2,"","../Resources/Images/SpiritOfTheHarp.png")
 card22 = Card.new(22, "Mystical Elf", "monster", "normal", "", 800, 2000, 4, "", "../Resources/Images/Todo/MysticalElf.jpg")
 card23 = Card.new(23, "Feral Imp", "monster", "normal", "", 1300, 1400, 4, "", "../Resources/Images/Todo/FeralImp.jpg")                
                   
