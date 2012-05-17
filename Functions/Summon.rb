@@ -69,7 +69,15 @@ def flipsummon                                      # Function for flip-summonin
     response = gets.to_i
     response -= 1
     card = @@monsterfield.findcard(facedownmonsters[response][:name])
-    @@monsterfield.updatespace(card[:name],"space[1] = 1")
+    if card[:extratype] != "flip-effect"
+        puts "This is not a flip-effect monster card"
+        return
+        
+    end
+    puts card[:effect]
+    eval card[:effect]
+    
     puts "Your monster is now in face-up defense mode"
-
+    @@monsterfield.updatespace(card[:name],"space[1] = 1")
+    
 end
