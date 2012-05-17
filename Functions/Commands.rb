@@ -53,7 +53,7 @@ def command(player,user_response)
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
-      list(@@hand)
+      @@hand.list
     #elsif response == "update"			# Needs to be implemented still. Will allow in-game updating of database or files
     #  require_relative 'Testing.rb'
     elsif response == "trp"			# Set trap card. INFO: Half implemented
