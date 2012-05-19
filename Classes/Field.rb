@@ -128,7 +128,7 @@ class FieldController
         } 
         if selected.empty? == true
             puts "No cards can be selected."
-            return
+            return false
         end
         
         if $debugplay == 1

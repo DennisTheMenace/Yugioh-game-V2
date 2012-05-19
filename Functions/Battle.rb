@@ -14,9 +14,11 @@ def battle
     if battle > 0
         outcome = 0
         @@emonsterfield.removecard(card2,false)
+        @@elp.decreaselp(battle)
     elsif battle < 0
         outcome = 1
         @@monsterfield.removecard(card1,false)
+        @@lp.increaselp(battle)
     elsif battle == 0
         outcome = 2
     else

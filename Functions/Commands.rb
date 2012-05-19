@@ -43,24 +43,24 @@ def command(player,user_response)
         @@monsterfield.list(true,array)
     elsif response == "gv"		# Lists all cards in your graveyard
       puts 'Graveyard:'
-      $player1graveyard.list
+      @@graveyard.list
     elsif response == "rp"
         puts "Removed from play:"
         @@outofplay.list
     elsif response == "lp"		# Display your current lifepoints
       playerset($testing)
-      puts "You have #{$lp1.lifepoints}"
+      puts @@lp.returnlp
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
       @@hand.list
     #elsif response == "update"			# Needs to be implemented still. Will allow in-game updating of database or files
     #  require_relative 'Testing.rb'
-    elsif response == "trp"			# Set trap card. INFO: Half implemented
+    elsif response == "trp"			# Set trap card
       settrap($testing)
-    elsif response == "settrap" 		# Alternate to trp.
+    elsif response == "settrap" 		# Alternate to trp
       settrap($testing)
-    elsif response == "atrp"			# Activate trap card. INFO: Half implemented
+    elsif response == "atrp"			# Activate trap card
       activatetrap
     elsif response == "btl" and $testing == 1	# Monster battle method
       battle

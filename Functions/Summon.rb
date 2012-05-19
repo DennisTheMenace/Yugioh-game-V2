@@ -46,6 +46,9 @@ def summon
         if response2 == 'y'
             puts "You must select a monster to tribute. [1,2,3,4,5]"
             tribute = @@monsterfield.selectcard
+            if tribute == false
+                return
+            end
             @@monsterfield.removecard(tribute,false)
             @@monsterfield.addcard(0,summoncard)
             graphicsupdate('')

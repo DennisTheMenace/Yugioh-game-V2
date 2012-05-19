@@ -8,6 +8,8 @@ def playerset(mode)
     if $activeplayer == 0
         @@name = $usr1
         @@ename = $usr2
+        @@lp = $lp1
+        @@elp = $lp2
         @@hand = $player1hand
         @@ehand = $player2hand
         @@deck = $player1deck
@@ -24,6 +26,8 @@ def playerset(mode)
     if $activeplayer == 1
         @@name = $usr2
         @@ename = $usr1
+        @@lp = $lp2
+        @@elp = $lp1
         @@hand = $player2hand
         @@ehand = $player1hand
         @@deck = $player2deck
