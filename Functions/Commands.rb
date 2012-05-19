@@ -121,7 +121,7 @@ def command(player,user_response)
         #$ginterface.puts($spelltrapfield1.space5[2][:file])
         #$ginterface.close
         
-        
+        @@graveyard.rmcardname("Dark Magician")
         $debug.test
         
     elsif response == "options" 

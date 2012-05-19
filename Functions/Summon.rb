@@ -46,13 +46,14 @@ def summon
         if response2 == 'y'
             puts "You must select a monster to tribute. [1,2,3,4,5]"
             tribute = @@monsterfield.selectcard
-            @@monsterfield.removecard(tribute)
+            @@monsterfield.removecard(tribute,false)
             @@monsterfield.addcard(0,summoncard)
             graphicsupdate('')
+            puts summoncard[:effect]
             eval(summoncard[:effect])
             @@hand.removecard(summoncard)
             puts "Monsterfield:"
-            @@monsterfield.list(false,(:name))
+            @@monsterfield.list(false,["name"])
         elsif response2 == 'n'
             puts "Returning..."
             return

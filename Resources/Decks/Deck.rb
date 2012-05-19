@@ -79,14 +79,42 @@ card20 = Card.new(20, "Spirit of the Harp", "monster","", "A spirit that soothes
 card21 = Card.new(21, "Penguin Soldier", "monster","flip-effect", "",750,500,2,"","../Resources/Images/SpiritOfTheHarp.png")
 card22 = Card.new(22, "Mystical Elf", "monster", "normal", "", 800, 2000, 4, "", "../Resources/Images/Todo/MysticalElf.jpg")
 card23 = Card.new(23, "Feral Imp", "monster", "normal", "", 1300, 1400, 4, "", "../Resources/Images/Todo/FeralImp.jpg")
-$event = "all"
-$action = "array = @@graveyard.findcards('Dark Magician') if array.size >= 1 @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = space[2][:atk] + 300 * array.size') end"
-                 
-card24 = Card.new(24, "Dark Magician Girl", "monster", "", 2000, 1700, 6, "RoutineController.addroutine($event,$action)", "../Resources/Images/Todo/DarkMagicianGirl.jpg")
+$dgirlatk = 2000
+                  
+$devent1 = "all"
+$daction1 = "$array = 0
+        $array = @@graveyard.findcards('Dark Magician')
+        if $array.size >= 1 
+            @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = $dgirlatk + 300 * $array.size')
+        else
+            @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = $dgirlatk')
+        end
+        "
+$devent2 = "all"
+$daction2 = "$array = 0
+$array = @@graveyard.findcards('Magician of Black Chaos')
+if $array.size >= 1 
+                  @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = $dgirlatk + 300 * $array.size') 
+                  else
+                  @@monsterfield.updatespace('Dark Magician Girl','space[2][:atk] = $dgirlatk')
+
+end
+"
+$devent3 = "fieldremove_Dark Magician Girl"
+$daction3 = "RoutineController.removeroutine($devent1,$daction1)"
+$devent4 = "fieldremove_Dark Magician Girl"
+$daction4 = "RoutineController.removeroutine($devent2,$daction2)"                 
+                  
+card24 = Card.new(24, "Dark Magician Girl", "monster", "effect", "", 2000, 1700, 6, "RoutineController.addroutine($devent1,$daction1,0)
+                  RoutineController.addroutine($devent2,$daction2,0)
+                  RoutineController.addroutine($devent3,$daction3,1)
+                  RoutineController.addroutine($devent4,$daction4,1)
+                  ", "../Resources/Images/Todo/DarkMagicianGirl.jpg")
                 
-$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20]
+$deck1 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20,card21,card22,card23,card24]
 # card15 omitted due to card15 being an empty card
-$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20]
+                  
+$deck2 = [celticguardian,card2,card3,card4,card5,card6,card7,card8,card9,card10,card11,card12,card13,card14,card16,card17,card18,card19,card20,card21,card22,card23,card24]
 # card15 omitted due to card15 being an empty card
 
 

@@ -13,14 +13,14 @@ class Debugger
     end
     def drawcard(name)
         playerset('')
-        specific = @@deck.findcards('Fortune Lady Water')
+        specific = @@deck.findcards('Dark Magician Girl')
         @@hand.addcard(specific)
     end
     def test
         $monsterfield1.find("lowest atk")
     end
     def debugplay
-        draw($activeplayer, 'yes', @@deck.findcards("Spirit of the Harp"))
+        draw($activeplayer, 'yes', @@deck.findcards("Dark Magician Girl"))
         draw($activeplayer, 'yes', @@deck.findcards("Dark Core"))
         $debugcommands = []
         IO.foreach "debug.txt" do |line|
@@ -32,3 +32,5 @@ class Debugger
 end
 $debug = Debugger.new
 $debug.drawcard('test')
+card = @@deck.findcards("Dark Magician")
+@@graveyard.addcard(card)
