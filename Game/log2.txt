@@ -28,15 +28,3 @@ end of .each
 $to-do:
 $toremove:
 routinecheck.end
-routinecheck.called
-entering @@routines.each{}
-end of .each
-$to-do:
-$toremove:
-routinecheck.end
-routinecheck.called
-entering @@routines.each{}
-end of .each
-$to-do:
-$toremove:
-routinecheck.end

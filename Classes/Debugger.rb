@@ -13,7 +13,7 @@ class Debugger
     end
     def drawcard(name)
         playerset('')
-        specific = @@deck.findcards('Dark Magician Girl')
+        specific = @@deck.findcards('Penguin Soldier')
         @@hand.addcard(specific)
     end
     def test
@@ -21,7 +21,7 @@ class Debugger
     end
     def debugplay
         draw($activeplayer, 'yes', @@deck.findcards("Dark Magician Girl"))
-        draw($activeplayer, 'yes', @@deck.findcards("Dark Core"))
+        draw($activeplayer, 'yes', @@deck.findcards("Penguin Soldier"))
         $debugcommands = []
         IO.foreach "debug.txt" do |line|
             $debugcommands.push(line)
@@ -32,5 +32,5 @@ class Debugger
 end
 $debug = Debugger.new
 $debug.drawcard('test')
-card = @@deck.findcards("Dark Magician")
-@@graveyard.addcard(card)
+#card = @@deck.findcards("Dark Magician")
+#@@graveyard.addcard(card)

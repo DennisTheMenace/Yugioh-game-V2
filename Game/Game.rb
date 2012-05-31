@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Version 1.3
+# Version 1.0
 
 # Made by Joshua Rowe
 
