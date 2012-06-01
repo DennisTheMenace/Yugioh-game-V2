@@ -27,6 +27,10 @@ def initialise(loadfile)
     require_relative '../Graphics/GraphicsHandler.rb'
         #graphicsinit
     #end
+    
+    #system("unzip ../Resources/Images.zip")
+    
+    
     # Load game
     if $loadgame == true
         loadgame(loadfile)
