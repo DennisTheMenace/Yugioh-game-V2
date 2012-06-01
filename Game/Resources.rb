@@ -19,7 +19,7 @@ require_relative '../Functions/Playerset.rb'		# Defines the player variables so 
 require_relative '../Functions/Commands.rb'
 require_relative '../Functions/Spell.rb'		# Activate a spell card method
 require_relative '../Extra/Colourtext.rb'	# Provides the ability to used coloured text STATUS: not working INFO: need to implement an option for when to enable colour text depending on if you have ansi colour bla bla installed
-
+require_relative '../Extra/Filesize.rb'
 require_relative '../Functions/Help.rb' 		# More help coming soon...
 
 require_relative '../Extra/Parser.rb'        # Will start work on this again soon
