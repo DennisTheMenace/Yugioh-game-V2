@@ -12,6 +12,8 @@ $file = File.new("log.txt", "w+")
 
 start				# Runs start method which intialises everything needed including Field Controllers, get player's name, graphics etc
 
+# Gotta make this loop 2-player friendly at somepoint
+
 while $lp1.returnlp > 0		# If life points become 0 the game loop will close.
 	activephase($activeplayer)
   	if $lp1.returnlp <= 0		# Lose condition: If your lifepoints reach 0
