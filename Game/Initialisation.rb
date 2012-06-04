@@ -10,8 +10,9 @@ def initialise(loadfile)
 
     # Initialise steps
 
-    # Resize needed images
-  
+    phases = Phases.new
+    $commands = Commands.new
+    
     if $testing == 1
         require_relative 'Testing.rb'
         require_relative '../Extra/Parser.rb'

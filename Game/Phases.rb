@@ -2,6 +2,8 @@
 
 # In Resources.rb? - Yes
 
+# *Note* Keep until version 1.2, then delete as it's 
+
 def activephase(currentplayer)
     if $activephase == 0 and $debugplay != 1
         $player1hand.addcard($deck1[11])

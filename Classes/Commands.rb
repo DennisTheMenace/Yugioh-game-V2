@@ -1,36 +1,35 @@
 #!/usr/bin/env ruby
 
-# In Resources.rb? - Yes
+Command = Struct.new(:input, :action)
 
-# Basically, the valid input commands list
-
-
-def command(player,user_response)
-    playerset($testing)
-    #if $testingmove != true
-    #  response = $testingmove
-    #end
+class Commands
+  attr_accessor :valid_commands
+  def initialize
+    @validcommands = ["smn","spl","exit"]
+    @authlevels = []
+  end
+  def addcommand (input,authcode)
+    @validcommands.push(input,authcode)
+  end
+  def input (authlevel)
     print "Enter Command: "
-    if $debugplaycounter == $debugplay.size
-       close 
-    end
-    if $debugplay == 1
-        response = $debugcommands[$debugplaycounter]
-        $debugplaycounter += 1
-        response = response.to_s
-        response = response.chomp
-        puts response
-    else
-        response = gets.chomp
-    end
-    
-    
-    if response == "smn" or response == "Summon"	# Summon a monster
+    response = gets.chomp
+    validate(response,authlevel)
+    puts "Validated!"
+  end
+  def validate (response,authcode)
+    execute (response)
+  end
+  def execute (response)#,authcode)
+    @validcommands.each{|command|
+      if command == response# and command[2] == authcode
+        counter = 1
+        if response == "smn" or response == "summon"  # Summon a monster
       summon
     elsif response == "flipsmn" or response == "flipsummon"
         flipsummon
     elsif response == "spl"
-      spell		
+      spell   
     elsif response == "mf"
         puts 'Monster field:'
         @@monsterfield.list(false,["name"])
@@ -42,34 +41,34 @@ def command(player,user_response)
             array = ["name","level","atk","def"]
         end
         @@monsterfield.list(true,array)
-    elsif response == "gv"		# Lists all cards in your graveyard
+    elsif response == "gv"    # Lists all cards in your graveyard
       puts 'Graveyard:'
       @@graveyard.list
     elsif response == "rp"
         puts "Removed from play:"
         @@outofplay.list
-    elsif response == "lp"		# Display your current lifepoints
+    elsif response == "lp"    # Display your current lifepoints
       playerset($testing)
       puts @@lp.returnlp
     elsif response == "hc"
       puts "You have #{@@hand.size} cards in your hand"
     elsif response == "hand"
       @@hand.list
-    #elsif response == "update"			# Needs to be implemented still. Will allow in-game updating of database or files
+    #elsif response == "update"     # Needs to be implemented still. Will allow in-game updating of database or files
     #  require_relative 'Testing.rb'
-    elsif response == "trp"			# Set trap card
+    elsif response == "trp"     # Set trap card
       settrap($testing)
-    elsif response == "settrap" 		# Alternate to trp
+    elsif response == "settrap"     # Alternate to trp
       settrap($testing)
-    elsif response == "atrp"			# Activate trap card
+    elsif response == "atrp"      # Activate trap card
       activatetrap
-    elsif response == "btl" and $testing == 1	# Monster battle method
+    elsif response == "btl" and $testing == 1 # Monster battle method
       battle
-    elsif response == "exit"		# Allows exiting and closes all open files.
+    elsif response == "exit"    # Allows exiting and closes all open files.
       close
-    elsif response == "turn"	# Outputs the current players turn
+    elsif response == "turn"  # Outputs the current players turn
       puts $activeplayer
-    elsif response == "help"	# The word 'Help' says it all
+    elsif response == "help"  # The word 'Help' says it all
       help
     elsif response == "settings" and $testing == 1  # Doesn't work, crashes game
       begin
@@ -118,8 +117,10 @@ def command(player,user_response)
       puts $namelist
     elsif response == "save"
         save
-    else
-      cputs("This does not compute",'yellow')
     
     end
+    return
+      end
+    }
+  end
 end

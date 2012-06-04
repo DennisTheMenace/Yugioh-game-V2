@@ -11,11 +11,13 @@ require_relative 'Resources.rb' # Imports "Resources.rb" which in turn imports a
 $file = File.new("log.txt", "w+")
 
 start				# Runs start method which intialises everything needed including Field Controllers, get player's name, graphics etc
-
+phases = Phases.new
 # Gotta make this loop 2-player friendly at some point
 
 while $lp1.returnlp > 0		# If life points become 0 the game loop will close.
-	activephase($activeplayer)
+  
+	phases.nextphase
+	phases.do_phase
   	if $lp1.returnlp <= 0		# Lose condition: If your lifepoints reach 0
     	puts "You lose..."		# You lose... =(
     	puts "=("
