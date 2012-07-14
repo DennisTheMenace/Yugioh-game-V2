@@ -36,5 +36,8 @@ def initialise(loadfile)
     if $loadgame == true
         loadgame(loadfile)
     end
+    
+    # Set command authentication levels
+    IO.foreach("cards.txt") { |line| puts line }
   
 end

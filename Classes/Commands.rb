@@ -3,10 +3,19 @@
 Command = Struct.new(:input, :action)
 
 class Commands
-  attr_accessor :valid_commands
+  attr_accessor :allcommands, :authlevels
   def initialize
-    @validcommands = ["smn","spl","exit"]
+    
+    @allcommands = ["smn","spl","exit"]
+    @authlevel1 = ["smn","spl","exit"]
+    @authlevel2 = ["smn","spl","exit", "test"]
+    @authlevel3 = []
+    # Authentication Levels:
+    # 1: All input except admin/mod/debug commands
+    # 2: All input 
+    # 3:
     @authlevels = []
+    @validcommands = []
   end
   def addcommand (input,authcode)
     @validcommands.push(input,authcode)
@@ -18,11 +27,24 @@ class Commands
     puts "Validated!"
   end
   def validate (response,authcode)
-    execute (response)
+    puts "Executing Now."
+    execute(response,authcode)
   end
-  def execute (response)#,authcode)
-    @validcommands.each{|command|
-      if command == response# and command[2] == authcode
+  def execute (response,authcode)
+    puts "in execution"
+    if @validcommands.empty? == true
+      puts "Still in development."
+    end
+    if authcode == 1
+      commands = @authlevel1
+    elsif authcode == 2
+      commands = @authlevel2
+    elsif authcode == 3
+      commands = @authlevel3
+    end
+    #puts commands
+    commands.each{|command|
+      if command == response #and command[2] == authcode
         counter = 1
         if response == "smn" or response == "summon"  # Summon a monster
       summon
@@ -55,7 +77,7 @@ class Commands
     elsif response == "hand"
       @@hand.list
     #elsif response == "update"     # Needs to be implemented still. Will allow in-game updating of database or files
-    #  require_relative 'Testing.rb'
+    
     elsif response == "trp"     # Set trap card
       settrap($testing)
     elsif response == "settrap"     # Alternate to trp
@@ -82,15 +104,15 @@ class Commands
     elsif response == "rpt" and $testing == 1 # Report method yet to be implemented
       puts "Not ready yet".yellow
     elsif response == "parse" and $testing == 1 
-      #puts "parsing...".cyan
-      puts "parsing..."
+      
+      cputs "parsing...", "cyan"
       parse(gets.to_s)
     elsif response == "eval" and $testing == 1
       
       puts "Input password..."
       response = gets.chomp
       if response == "asd"
-        #puts "Access Granted".green
+        
         cputs "Access Granted", 'green'
       else
         cputs "Access Denied", 'red'
